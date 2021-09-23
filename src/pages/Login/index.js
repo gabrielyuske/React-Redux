@@ -5,26 +5,15 @@ import { useDispatch } from "react-redux";
 
 import { Container } from "../../styles/Globalstyles";
 import { Title, Paragrafo } from "./styled";
-
-// import axios from "../../services/axios";
+import * as exampleActions from "../../store/modules/example/actions";
 
 export default function Login() {
-  // React.useEffect(() => {
-  //   async function getData() {
-  //     const response = await axios.get("pokedex.json");
-  //     const { data } = response;
-  //     console.log(data);
-  //   }
-  //   getData();
-  // }, []);
   const dispatch = useDispatch();
 
   function handleClick(e) {
     e.preventDefault();
 
-    dispatch({
-      type: 'BOTAO_CLICADO',
-    });
+    dispatch(exampleActions.clickButtonRequest());
   }
 
   return (
