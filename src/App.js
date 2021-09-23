@@ -5,6 +5,7 @@ import history2 from "./services/history";
 import Routes from "./routes";
 import Globalstyles from "./styles/Globalstyles";
 import Header from "./components/Header";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <Header />
       <Routes />
       <Globalstyles />
+      {/* autoClose === milisegundo */}
+      <ToastContainer autoClose={3000} className="toast-container" />
     </Router>
   );
 }
