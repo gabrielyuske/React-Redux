@@ -1,21 +1,26 @@
 import React from "react";
 import { Router } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { Provider } from "react-redux";
 
-import history2 from "./services/history";
+import store from "./store";
+import history from "./services/history";
 import Routes from "./routes";
 import Globalstyles from "./styles/Globalstyles";
 import Header from "./components/Header";
-import { ToastContainer } from "react-toastify";
+
 
 function App() {
   return (
-    <Router history={history2}>
-      <Header />
-      <Routes />
-      <Globalstyles />
-      {/* autoClose === milisegundo */}
-      <ToastContainer autoClose={3000} className="toast-container" />
-    </Router>
+    <Provider store={store}>
+      <Router history={history}>
+        <Header />
+        <Routes />
+        <Globalstyles />
+        {/* autoClose === milisegundo */}
+        <ToastContainer autoClose={3000} className="toast-container" />
+      </Router>
+    </Provider>
   );
 }
 
