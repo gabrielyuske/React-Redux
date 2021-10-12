@@ -3,12 +3,10 @@ import { persistReducer } from "redux-persist";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default reducers => {
-  const persistReducers = persistReducer({
-<<<<<<< HEAD
+  const persistReducers = persistReducer(
+    {
     key: "CONSUMO-API",
-=======
-    key: "REACT-BASE",
->>>>>>> 84e2ab3a1a0107aef9211f9a78bf89d346e4ecff
+    // key: "REACT-BASE",
     storage,
     whilelist: ["auth"],
   },

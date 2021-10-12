@@ -17,6 +17,33 @@ export function loginSuccess(payload) {
 export function loginFailure(payload) {
   return {
     type: types.LOGIN_FAILURE,
-    payload
+    payload,
   };
 }
+
+export function registerRequest(payload) {
+  return {
+    type: types.REGISTER_REQUEST,
+    payload,
+  };
+}
+
+export function registerFailure(payload) {
+  return {
+    type: types.REGISTER_FAILURE,
+    payload,
+  };
+}
+export function registerUpdateSuccess(payload) {
+  return {
+    type: types.REGISTER_UPDATE_SUCCESS,
+    payload,
+  };
+}
+export function registerCreateSuccess(payload) {
+  return {
+    type: types.REGISTER_CREATE_SUCCESS,
+    payload,
+  };
+}
+
