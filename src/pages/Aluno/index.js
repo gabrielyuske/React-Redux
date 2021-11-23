@@ -31,7 +31,7 @@ export default function Aluno({ match, history }) {
 
 
   useEffect(() => {
-    if(!id)return;
+    if(!id) return;
 
     async function getData(){
       try{
@@ -52,9 +52,9 @@ export default function Aluno({ match, history }) {
       }catch(err){
         setIsLoading(false);
         const status = get(err,"response.status",0);
-        const errors = get(err,"response.data.erros",[]);
+        const errors = get(err,"response.data.errors",[]);
 
-        if(status === 400)errors.map(error => toast.error(error));
+        if(status === 400)errors.map((error) => toast.error(error));
         history.push("/");
       }
     }
@@ -120,12 +120,13 @@ export default function Aluno({ match, history }) {
 
       setIsLoading(false);
     }catch(err){
+      setIsLoading(false);
       const status = get(err,"response.status",0);
       const data = get(err,"response.data",{});
-      const errors = get(data,"errors",[]);
+      const errors = get(data,"error",[]);
 
       if(errors.length > 0 ){
-        errors.map(error => toast.error(error));
+        errors.map((error) => toast.error(error));
       }else{
         toast.error("Erro desconhecido");
       }
